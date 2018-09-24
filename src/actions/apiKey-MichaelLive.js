@@ -1,0 +1,1 @@
+export const FOOD_API_KEY_HEADER = '2ZGp5KEv00mshuXt8tvQPjUiXvX0p11qhAQjsnTWmu1iNvvIAK'
