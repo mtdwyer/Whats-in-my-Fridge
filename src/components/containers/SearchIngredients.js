@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux';
 import { fetchIngredients, fetchRecipes } from '../../actions'
-import { Recipes } from '../views';
+import { Results } from '../views';
 import Spinner from '../../common/Spinner';
 
  class Search extends Component {
@@ -52,7 +52,7 @@ import Spinner from '../../common/Spinner';
 
 		if ( fetchedRecipes !== null) {
 			recipes = fetchedRecipes.map((item) => {
-				return <Recipes key={item.id} item={item} />
+				return <Results key={item.id} item={item} />
 			});
 		} else {
 			recipes = <Spinner />;
@@ -60,6 +60,7 @@ import Spinner from '../../common/Spinner';
 
     return (
       <div style={{marginTop: 100, textAlign: 'center'}}>
+			under construction!do not use!<br />
 			Use a comma to separate ingredients
 				<form onSubmit={this.handleSubmitSearch}>
 					<input ref={this.search} onKeyUp={this.handleSearch} />

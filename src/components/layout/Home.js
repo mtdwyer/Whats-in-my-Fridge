@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { SearchRecipes } from '../containers';
+import { SearchRecipes, SearchIngredients } from '../containers';
 
 class Home extends Component {
   render() {
     
     return (
       <div>
+
+       <SearchIngredients />
         <SearchRecipes />
         
         
