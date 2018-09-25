@@ -1,2 +1,2 @@
 // Take the X-Mashape-Key from the API and replace the below string and then change the import under index.js to point there
-export const FOOD_API_KEY_HEADER = 'Your_API_Key_Here'
+export const FOOD_API_KEY_HEADER = 'lHGX9VWHV6msh5BWKHSgg4k9ev6Cp1pZx5yjsnwIa7WdFMf755'
