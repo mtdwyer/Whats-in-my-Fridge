@@ -1,7 +1,7 @@
-import Search from './Search';
+import SearchRecipes from './SearchRecipes';
 import RecipeInfo from './RecipeInfo';
 
 export {
-    Search,
+    SearchRecipes,
     RecipeInfo
 }

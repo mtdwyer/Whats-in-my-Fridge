@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-const Recipes = (props) => {
+const Results = (props) => {
     return (
         <div style={{float: 'left', height: 500, width: 500}}>
             <Link to={`recipe/${props.item.id}`} ><img src={props.item.image} /></Link>
@@ -15,4 +15,4 @@ const Recipes = (props) => {
     )
 }
 
-export default Recipes;
+export default Results;

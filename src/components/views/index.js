@@ -1,7 +1,7 @@
-import Recipes from './Recipes';
+import Results from './Results';
 import Recipe from './Recipe';
 
 export {
-    Recipes,
+    Results,
     Recipe
 }

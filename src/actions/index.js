@@ -2,7 +2,7 @@ import { FETCH_INGREDIENTS, FETCH_RECIPES, FETCH_CLICKED_RECIPE } from '../const
 import axios from 'axios';
 
 // Point the import to the API Key file you want to use
-import { FOOD_API_KEY_HEADER } from './apiKey-JJ';
+import { FOOD_API_KEY_HEADER } from './apiKey-MichaelLive';
 
 
 const Axios = axios.create({
@@ -30,7 +30,6 @@ export const fetchIngredients = (ingredient) => dispatch => {
         .catch(err => {
             console.log(err);
         });
-
 } 
 
 export const fetchRecipes = (ingredients) => dispatch => {
