@@ -5,7 +5,7 @@ import { fetchIngredients, fetchRecipes } from '../../actions'
 import { Results } from '../views';
 import Spinner from '../../common/Spinner';
 
- class Search extends Component {
+ class SearchIngredients extends Component {
 
 	constructor(props) {
 		super(props);
@@ -25,8 +25,9 @@ import Spinner from '../../common/Spinner';
 	handleSearch = (event) => {
 		let value = this.search.current.value;
 		let updated = Object.assign({}, this.state.ingredients);
+		updated = value
 	
-		updated = (value.split(',')).join('%2C');
+		// updated = (value.split(',')).join('%2C');
 		console.log(updated);
 		
 		this.setState({
@@ -38,24 +39,24 @@ import Spinner from '../../common/Spinner';
 		event.preventDefault();
 		console.log(this.state.ingredients);
 		
-		this.props.fetchRecipes(this.state.ingredients);
+		this.props.fetchIngredients(this.state.ingredients);
 		event.target.reset();
 	}
   
   render() {
 
-		//console.log(this.props.recipes)
+		//console.log(this.props.ingredients)
 
-		const { fetchedRecipes } = this.props.recipes;
+		const { fetchedIngredients } = this.props.ingredients;
 
-		let recipes;
+		let ingredients;
 
-		if ( fetchedRecipes !== null) {
-			recipes = fetchedRecipes.map((item) => {
+		if ( fetchedIngredients !== null) {
+			ingredients = fetchedIngredients.map((item) => {
 				return <Results key={item.id} item={item} />
 			});
 		} else {
-			recipes = <Spinner />;
+			ingredients = <Spinner />;
 		}
 
     return (
@@ -68,14 +69,14 @@ import Spinner from '../../common/Spinner';
 					<button>Search by Ingredient</button>
 				</form>
 				<br />
-        {recipes}
+        {ingredients}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-	recipes: state.recipes
+	ingredients: state.ingredients
 });
 
-export default connect(mapStateToProps, { fetchIngredients, fetchRecipes })(Search);
+export default connect(mapStateToProps, { fetchIngredients })(SearchIngredients);
