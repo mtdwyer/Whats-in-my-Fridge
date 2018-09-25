@@ -1,9 +1,8 @@
 import { FETCH_INGREDIENTS, FETCH_RECIPES, FETCH_CLICKED_RECIPE } from '../constants';
 import axios from 'axios';
 
-
-
-import { FOOD_API_KEY_HEADER } from './apiKey-MichaelLive';
+// Point the import to the API Key file you want to use
+import { FOOD_API_KEY_HEADER } from './apiKey-JJ';
 
 
 const Axios = axios.create({
