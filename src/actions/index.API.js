@@ -1,12 +1,16 @@
 import { FETCH_INGREDIENTS, FETCH_RECIPES, FETCH_CLICKED_RECIPE } from '../constants';
 import axios from 'axios';
 
+// Point the import to the API Key file you want to use
+import { FOOD_API_KEY_HEADER } from './apiKey-JJ';
+
 
 const Axios = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com',
     timeout: 1000,
     headers: {
-        "Access-Control-Allow-Origin": "*"
+        'X-Mashape-Key': `${FOOD_API_KEY_HEADER}`,
+        'X-Mashape-Host': 'spoonacular-recipe-food-nutrition-v1.p.mashape.com'
     }
 })
 
@@ -14,7 +18,7 @@ const Axios = axios.create({
 export const fetchIngredients = (ingredient) => dispatch => {
 
     Axios
-        .get(`/auto`)
+        .get(`/food/ingredients/autocomplete?query=${ingredient}&number=10&intolerances=egg`)
         .then(results => {
             
             dispatch({
@@ -33,7 +37,7 @@ export const fetchRecipes = (ingredients) => dispatch => {
     
 
     Axios
-        .get(`/search`)
+        .get(`/recipes/findByIngredients?ingredients=${ingredients}&number=10&ranking=1`)
         
         .then( results => {
 
@@ -51,7 +55,7 @@ export const fetchRecipes = (ingredients) => dispatch => {
 export const getClickedRecipe = (id) => dispatch => {
 
     Axios
-        .get(`/recipe`)
+        .get(`/recipes/${id}/information`)
         .then(result => {
             
             dispatch({
