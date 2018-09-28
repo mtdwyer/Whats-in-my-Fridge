@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux';
-import { fetchIngredients, fetchRecipes } from '../../actions'
+import { fetchIngredients } from '../../actions'
 import { Results } from '../views';
 import Spinner from '../../common/Spinner';
 
