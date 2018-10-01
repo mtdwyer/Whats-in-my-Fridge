@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Results = (props) => {
     return (
-        <div style={{float: 'left', height: 500, width: 500}}>
+        <div className='recipes' style={{float: 'left', height: 500, width: 500}}>
             <Link to={`recipe/${props.item.id}`} ><img src={props.item.image} /></Link>
             <br />
             <span>{props.item.title}</span>

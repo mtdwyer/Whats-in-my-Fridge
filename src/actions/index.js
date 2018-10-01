@@ -1,4 +1,4 @@
-import { FETCH_INGREDIENTS, FETCH_RECIPES, FETCH_CLICKED_RECIPE } from '../constants';
+import { FETCH_INGREDIENTS, FETCH_RECIPES, FETCH_CLICKED_RECIPE, FETCH_MORE_RECIPES } from '../constants';
 import axios from 'axios';
 
 
@@ -45,6 +45,13 @@ export const fetchRecipes = (ingredients) => dispatch => {
         .catch(err => {
             console.log(err);
         });
+
+}
+export const fetchMoreRecipes = () => dispatch => {
+    console.log();
+            dispatch({
+                type: FETCH_MORE_RECIPES
+            });
 
 }
 

@@ -1,4 +1,4 @@
-import { FETCH_RECIPES, FETCH_CLICKED_RECIPE } from '../constants';
+import { FETCH_RECIPES, FETCH_CLICKED_RECIPE, FETCH_MORE_RECIPES } from '../constants';
 
 let initialState = {
     fetchedRecipes: null,
@@ -8,22 +8,41 @@ let initialState = {
 export default (state = initialState, action) => {
 
     let updated = Object.assign({}, state);
+    let copyArray, splicedArray, copyData;
 
     switch(action.type) {
 
         case FETCH_RECIPES:
 
-            // let fetchedTitleRecipe = action.data;
-
-            // updated.fetchedRecipes = fetchedTitleRecipe;
-
-            // return updated;
-            let recipes = action.data.data;
+            copyData = Object.assign({},action.data)
             
-            console.log(recipes);
+            copyArray = copyData.data
+            
+            console.log(copyArray, copyData);
 
-            updated.fetchedRecipes = recipes;
+            splicedArray = copyArray.splice(0,10)
+            console.log(splicedArray);
+            console.log(updated);
+            updated.fetchedRecipes = [];
+            
+            splicedArray.forEach(item => {
+                updated.fetchedRecipes.push(item)
+            });
+            console.log(updated);
 
+            updated.splicedArray = copyData.data;
+
+            //updated.fetchedRecipes = recipes;
+
+            return updated;
+
+        case FETCH_MORE_RECIPES:
+            console.log(updated);
+            
+            let newRecipes = updated.splicedArray.splice(0,10);
+
+            updated.fetchedRecipes = [...state.fetchedRecipes, ...newRecipes]
+            
             return updated;
 
         case FETCH_CLICKED_RECIPE:

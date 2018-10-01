@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { connect } from 'react-redux';
-import { fetchRecipes } from '../../actions'
+import { fetchRecipes, fetchMoreRecipes } from '../../actions'
 import { Results } from '../views';
 import Spinner from '../../common/Spinner';
 
@@ -17,7 +17,6 @@ import Spinner from '../../common/Spinner';
 		}
 
 	}
-
 	
 	handleSearch = (event) => {
 		let value = this.search.current.value;
@@ -37,6 +36,22 @@ import Spinner from '../../common/Spinner';
 		
 		this.props.fetchRecipes(this.state.ingredients);
 		event.target.reset();
+
+		this.scrollListener = window.addEventListener('scroll', (e) => {
+			this.handleScroll(e)
+		})
+	}
+
+	handleScroll = (e) => {
+		
+		let lastRecipe = document.querySelector('div.recipes:last-child')
+		let lastRecipeOffset = lastRecipe.offsetTop + lastRecipe.clientHeight;
+		let pageOffset = window.pageYOffset + window.innerHeight;
+		let bottomOffset = 20;
+
+		if( pageOffset > lastRecipeOffset - bottomOffset) {
+			this.props.fetchMoreRecipes();
+		}
 	}
   
   render() {
@@ -74,4 +89,4 @@ const mapStateToProps = state => ({
 	recipes: state.recipes
 });
 
-export default connect(mapStateToProps, { fetchRecipes })(SearchRecipes);
+export default connect(mapStateToProps, { fetchRecipes, fetchMoreRecipes })(SearchRecipes);
