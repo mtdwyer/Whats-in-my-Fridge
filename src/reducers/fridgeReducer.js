@@ -1,7 +1,7 @@
 import { ADD_ITEM, DELETE_ITEM } from '../constants';
 
 let initialState = {
-  ingredients: ['beer']
+  ingredients: []
 };
 
 export default (state = initialState, action) => {

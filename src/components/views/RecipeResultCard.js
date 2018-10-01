@@ -36,6 +36,7 @@ const RecipeResultCard = props => {
             {props.data.title}
           </Typography>
           <Typography component="p">
+            Matching Ingredient Count: {props.data.usedIngredientCount} <br/>
             Missing Ingredient Count: {props.data.missedIngredientCount}
           </Typography>
         </CardContent>

@@ -9,7 +9,7 @@ import {
 import axios from 'axios';
 
 // Point the import to the API Key file you want to use
-import { FOOD_API_KEY_HEADER } from './apiKey-MichaelLive';
+import { FOOD_API_KEY_HEADER } from './apiKey-';
 
 const Axios = axios.create({
   baseURL: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com',
