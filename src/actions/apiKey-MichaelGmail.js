@@ -1,1 +1,0 @@
-export const FOOD_API_KEY_HEADER = 'plbov82EGFmsh3KUW7WLL0V6AA6tp19iIJ2jsnMBm2jppTTwhh'
