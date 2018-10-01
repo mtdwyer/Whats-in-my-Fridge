@@ -26,3 +26,35 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+
+.searchIngredients {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.searchBox {
+  display: flex;
+  flex-wrap: nowrap; 
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+#searchIngredients div {
+  flex: 1;
+}
+
+
+
+#commonIngredients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+

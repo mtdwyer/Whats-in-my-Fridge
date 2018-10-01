@@ -68,19 +68,34 @@ class Search extends Component {
     //console.log("FetchedIngredients: ", fetchedIngredients);
     //console.log("fridge: ", this.props.fridge.ingredients);
 
+    //  <img src='https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'></img>
+
     if (fetchedIngredients !== null) {
-      tempIngredients = fetchedIngredients.map(item => {
+      tempIngredients = fetchedIngredients.map((item) => {
+
         return (
-          <Button
-            name={item.name}
-            item={item.name}
-            key={item.item}
-            onClick={(e) => {
-              this.handleButtonClick(e, item.name)
-            }}
+            <Button
+              className='searchBox'
+              name={item.name}
+              item={item.name}
+              key={item.item}
+              onClick={(e) => {
+                this.handleButtonClick(e, item.name)
+              }}
             >
-            {item.name}
-          </Button>
+            <div className='searchBox'>
+              <div className = 'searchImg'>
+                <img
+                  name={item.name}
+                  src={'https://spoonacular.com/cdn/ingredients_100x100/' + item.image}
+                >
+                </img>
+              </div>
+              <div className = 'searchName'>
+                {item.name}
+              </div>
+            </div>
+            </Button>
         );
       });
     } else {
@@ -110,7 +125,9 @@ class Search extends Component {
           </Button> */}
           <button>Search for Ingredient</button>
           <br />
-          {tempIngredients}
+          <div className='searchIngredients'>
+            {tempIngredients}
+          </div>
         </form>
       </div>
     );

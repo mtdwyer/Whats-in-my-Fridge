@@ -43,7 +43,7 @@ class CommonIngredients extends Component {
     // }
 
     return (
-      <div>
+      <div id='commonIngredients'>
         {
           (printIngredients = commonIngredients.map(item => {
             return (
