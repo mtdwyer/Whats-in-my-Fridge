@@ -39,7 +39,7 @@ export const fetchRecipes = ingredients => dispatch => {
   console.log(ingredients);
 
   Axios.get(
-    `/recipes/findByIngredients?ingredients=${ingredients}&number=100&ranking=1`
+    `/recipes/findByIngredients?ingredients=${ingredients}&number=50&ranking=1`
   )
 
     .then(results => {
