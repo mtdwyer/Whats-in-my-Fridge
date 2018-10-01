@@ -253,7 +253,7 @@ class Results extends Component {
           Recipe Book
         </Typography>
         
-        <Grid container justify="center">
+        <Grid container justify="space-around">
           {/* <Grid item>
           {[0, 1, 2].map(value => (
             <ResultCardSample />
