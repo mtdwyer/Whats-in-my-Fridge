@@ -102,33 +102,36 @@ class Search extends Component {
       tempIngredients = <p>no results.</p>;
     }
 
-    return (
+        return (
       <div>
-        <form onSubmit={this.handleSubmitSearch}>
-          <br />
-          {/* <TextField
-            style={{ padding: 24 }}
+        <form onSubmit={this.handleSubmitSearch} className='searchForm'>
+          <TextField
+            label="Ingredient Search"
+            type="search"
             id="searchInput"
-            placeholder="Search for Ingredients"
+            defaultValue=""
+            helperText="Type an ingredient name and click Search"
             margin="normal"
-            onKeyUp={this.handleSearch}
-            ref={this.search}
-          /> */}
-          <input ref={this.search} onKeyUp={this.handleSearch} />
-          {/* <Button
+            onChange={this.handleSearch}
+            inputRef={this.search}
+          />
+          &nbsp;
+          
+          <Button
             variant="contained"
             color="primary"
-            //onClick={this.onSubmitHandler}
+            type="submit"
+            //onSubmit={this.handleSubmitSearch}
+            //onClick={this.handleSubmitSearch}
             //disabled={this.state.isButtonDisabled}
           >
             Search
-          </Button> */}
-          <button>Search for Ingredient</button>
-          <br />
-          <div className='searchIngredients'>
-            {tempIngredients}
-          </div>
+          </Button>
         </form>
+        < div className = 'searchIngredients' >
+              {tempIngredients}
+        </div>
+
       </div>
     );
   }
