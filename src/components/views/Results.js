@@ -250,9 +250,9 @@ class Results extends Component {
     return (
       <Paper elevation={12}>
         <Typography variant="headline" component="h2">
-          Results
+          Recipe Book
         </Typography>
-        <Typography component="p">Where recipes can go.</Typography>
+        
         <Grid container justify="center">
           {/* <Grid item>
           {[0, 1, 2].map(value => (
