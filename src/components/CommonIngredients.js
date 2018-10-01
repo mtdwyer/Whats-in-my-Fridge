@@ -3,11 +3,11 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 import { Item } from './views';
-import { addItem, deleteItem } from '../actions';
+import { addItem, deleteItem } from '../actions/index';
 import Fridge from './Fridge.1';
 
 let printIngredients;
-const commonIngredients = ['eggs', 'milk', 'sugar', 'flour', 'beef', 'pork', 'chicken'];
+const commonIngredients = ['eggs', 'milk', 'sugar', 'flour', 'beef', 'pork', 'chicken', 'butter', 'garlic'];
 
 class CommonIngredients extends Component {
   state = {

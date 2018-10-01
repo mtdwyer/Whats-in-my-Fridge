@@ -22,7 +22,7 @@ import {
   deleteItem,
   fetchRecipes,
   getClickedRecipe
-} from "../../actions";
+} from "../../actions/index";
 
 // ***************
 //Material UI settings

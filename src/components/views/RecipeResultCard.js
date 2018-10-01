@@ -7,7 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import samplePic from "../../assets/images/sudo-rm.gif";
 import { connect } from "react-redux";
-import { fetchRecipes } from "../../actions";
+import { fetchRecipes } from "../../actions/index";
 
 const styles = {
   card: {
