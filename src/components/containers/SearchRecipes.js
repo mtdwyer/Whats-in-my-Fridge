@@ -44,7 +44,7 @@ import Spinner from '../../common/Spinner';
 
 	handleScroll = (e) => {
 		
-		let lastRecipe = document.querySelector('div.recipes:last-child')
+		let lastRecipe = document.querySelector('div.recipeDiv:last-child')
 		let lastRecipeOffset = lastRecipe.offsetTop + lastRecipe.clientHeight;
 		let pageOffset = window.pageYOffset + window.innerHeight;
 		let bottomOffset = 20;

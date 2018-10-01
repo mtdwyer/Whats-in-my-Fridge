@@ -18,17 +18,17 @@ export default (state = initialState, action) => {
             
             copyArray = copyData.data
             
-            console.log(copyArray, copyData);
+            //console.log(copyArray, copyData);
 
             splicedArray = copyArray.splice(0,10)
-            console.log(splicedArray);
-            console.log(updated);
+            //console.log(splicedArray);
+            //console.log(updated);
             updated.fetchedRecipes = [];
             
             splicedArray.forEach(item => {
                 updated.fetchedRecipes.push(item)
             });
-            console.log(updated);
+            //console.log(updated);
 
             updated.splicedArray = copyData.data;
 
@@ -37,7 +37,7 @@ export default (state = initialState, action) => {
             return updated;
 
         case FETCH_MORE_RECIPES:
-            console.log(updated);
+            //console.log(updated);
             
             let newRecipes = updated.splicedArray.splice(0,10);
 
